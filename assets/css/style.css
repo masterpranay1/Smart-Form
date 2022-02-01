@@ -14,11 +14,31 @@ i don't have to include these numbers again and again
   --clr-text-2: #1b2d45;
   --clr-warn: #d0342c;
   --clr-success: #4bb543;
-  --fs-xl: 2.2em;
-  --fs-l: 2em;
-  --fs-m: 1.8em;
-  --fs-s: 1.6em;
-  --fs-xl: 1.4em;
+  --fs-xl: 2em;
+  --fs-l: 1.8em;
+  --fs-m: 1.5em;
+  --fs-s: 1.2em;
+  --fs-xs: 1em;
+}
+
+@media (max-width: 63.9375em) {
+  :root {
+    --fs-xl: 1.8em;
+    --fs-l: 1.6em;
+    --fs-m: 1.3em;
+    --fs-s: 1.1em;
+    --fs-xs: 1em;
+  }
+}
+
+@media (max-width: 47.9375em) {
+  :root {
+    --fs-xl: 1.7em;
+    --fs-l: 1.5em;
+    --fs-m: 1.2em;
+    --fs-s: 1em;
+    --fs-xs: 0.9em;
+  }
 }
 
 *,
@@ -33,6 +53,7 @@ i don't have to include these numbers again and again
 body {
   width: 100%;
   min-height: 100vh;
+  font-family: var(--ff-pri);
 }
 
 /* ****************** */
@@ -106,6 +127,9 @@ body {
   margin-bottom: var(--mb, 2em);
 }
 
+/* ***************************** */
+/* button and link global styles */
+/* ***************************** */
 a {
   text-decoration: none;
   cursor: pointer;
@@ -141,5 +165,89 @@ button:hover, .button:hover {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.highlight {
+  color: var(--clr-ter);
+}
+
+.hero {
+  background: var(--clr-pri);
+  color: var(--clr-text-2);
+  padding: 2em 4em;
+  width: 50%;
+  min-height: 100vh;
+}
+
+.hero .hero__heading {
+  font-size: var(--fs-l);
+}
+
+.hero .hero__text-l {
+  font-weight: 700;
+  font-family: var(--ff-sec);
+  font-size: var(--fs-s);
+  --mt: 2em;
+  margin-top: var(--mt);
+  max-width: 35ch;
+}
+
+.hero .hero__image {
+  --mt: auto;
+  --mb: auto;
+  margin-top: var(--mt);
+  margin-bottom: var(--mb);
+  max-width: 70%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.hero .hero__text-m {
+  --mt: auto;
+  margin-top: var(--mt);
+  font-weight: 700;
+  font-family: var(--ff-sec);
+  font-size: var(--fs-s);
+  text-align: center;
+}
+
+@media (max-width: 63.9375em) {
+  .hero {
+    padding: 2em;
+  }
+  .hero .hero__text-l {
+    --mt: 1em;
+  }
+  .hero .hero__image {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 47.9375em) {
+  .hero {
+    width: 40%;
+  }
+  .hero .hero__image {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 31.25em) {
+  .hero {
+    display: none;
+  }
+}
+
+.hero.signUp .hero__img-signIn, .hero.signUp .hero__img-feature {
+  display: none;
+}
+
+.hero.signIn .hero__img-signUp, .hero.signIn .hero__img-feature {
+  display: none;
+}
+
+.hero.feature .hero__img-signIn, .hero.feature .hero__img-signUp {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

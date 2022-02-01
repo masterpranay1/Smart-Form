@@ -19,9 +19,23 @@
   //to-do -> add more themes
 
   // font-size
-  --fs-xl : 2.2em;
-  --fs-l: 2em;
-  --fs-m: 1.8em;
-  --fs-s : 1.6em;
-  --fs-xl: 1.4em;
+  --fs-xl : 2em;
+  --fs-l: 1.8em;
+  --fs-m: 1.5em;
+  --fs-s : 1.2em;
+  --fs-xs: 1em;
+  @include breakpoint-down(desktop) {
+    --fs-xl : 1.8em;
+    --fs-l : 1.6em;
+    --fs-m : 1.3em;
+    --fs-s : 1.1em;
+    --fs-xs : 1em;
+  }
+  @include breakpoint-down(tablet) {
+    --fs-xl : 1.7em;
+    --fs-l : 1.5em;
+    --fs-m : 1.2em;
+    --fs-s : 1em;
+    --fs-xs : 0.9em;
+  }
 }

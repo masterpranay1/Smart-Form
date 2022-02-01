@@ -9,8 +9,7 @@
 body {
     width: 100%;
     min-height: 100vh;
-
-    // To-do -> add a global font family
+    font-family: var(--ff-pri);
 }
 
 /* ****************** */
@@ -71,8 +70,10 @@ body {
     margin-bottom: var(--mb, 2em);
 }
 
+/* ***************************** */
+/* button and link global styles */
+/* ***************************** */
 
-// button and link global styles
 a {
     text-decoration: none;
     cursor: pointer;
@@ -111,4 +112,9 @@ button:hover, .button:hover {
 // utility class to make uppercase 
 .uppercase {
     text-transform: uppercase;
+}
+
+// highlighing a text
+.highlight {
+    color: var(--clr-ter);
 }

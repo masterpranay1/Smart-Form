@@ -1,0 +1,72 @@
+.hero {
+    // hero is a flexbox with direction col
+    background: var(--clr-pri);
+    color : var(--clr-text-2);
+    padding: 2em 4em;
+    width: 50%;
+    min-height: 100vh;
+    #{&}__heading {
+        font-size: var(--fs-l);
+    }
+    #{&}__text-l {
+        font-weight: 700;
+        font-family: var(--ff-sec);
+        font-size: var(--fs-s);
+    
+        --mt : 2em;
+        margin-top: var(--mt);
+
+        max-width: 35ch;
+    }
+    #{&}__image {
+        --mt : auto; 
+        --mb : auto;
+        margin-top: var(--mt);
+        margin-bottom : var(--mb);
+        max-width: 70%;
+        align-self: center;
+    }
+    #{&}__text-m {
+        --mt : auto;
+        margin-top: var(--mt);
+        font-weight: 700;
+        font-family: var(--ff-sec);
+        font-size: var(--fs-s);
+        text-align: center;
+    }
+    @include breakpoint-down(desktop) {
+        padding: 2em;
+        #{&}__text-l {
+            --mt : 1em;
+        }
+        #{&}__image {
+            max-width: 80%;
+        }
+    }
+    @include breakpoint-down(tablet) {
+        width: 40%;
+        #{&}__image {
+            max-width: 100%;
+        }
+    }
+    @include breakpoint-down(mobile) {
+        display: none;
+    }
+}
+
+// classes to be handled by javascript
+.hero.signUp {
+    .hero__img-signIn, .hero__img-feature {
+        display: none;
+    }
+}
+.hero.signIn {
+    .hero__img-signUp, .hero__img-feature {
+        display: none;
+    }
+}
+.hero.feature {
+    .hero__img-signIn, .hero__img-signUp {
+        display: none;
+    }
+}
