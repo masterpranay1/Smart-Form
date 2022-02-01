@@ -1,0 +1,161 @@
+.form-con {
+  padding: 3em 3em 3em 3em;
+  width: 50%;
+  min-height: 100vh;
+  background: var(--clr-sec);
+  &__heading {
+    font-size: var(--fs-xl);
+  }
+  &__p {
+    --mt: 0.5em;
+    margin-top: var(--mt);
+    font-size: var(--fs-s);
+  }
+  &__progress {
+    width: 10em;
+    height: 5em;
+    background: var(--clr-pri);
+
+    --mt: 2em;
+    margin-top: var(--mt);
+  }
+  .form {
+    --mt: 2em;
+    width: 100%;
+    margin-top: var(--mt);
+    &__input {
+      outline: none;
+      border: 2px solid var(--clr-text-2);
+      padding: 0.5em 1em;
+      border-radius: 3px;
+
+      font-size: var(--fs-s);
+    }
+    &__input-wrapper {
+      width: 60%;
+      --mb: 2em;
+      margin-bottom: var(--mb);
+      label {
+        --mb: 1em;
+        margin-bottom: var(--mb);
+      }
+      &.checkbox {
+        height: 2em;
+        align-items: center;
+        input {
+          width: 1.5em;
+          height: 1.5em;
+          margin-right: 1em;
+        }
+      }
+    }
+    &__button-pri {
+      background: var(--clr-ter);
+      color: var(--clr-sec);
+      border: 1px solid var(--clr-ter);
+    }
+    &__button-sec {
+      background: var(--clr-sec);
+      color: var(--clr-ter);
+      border: 1px solid var(--clr-ter);
+      margin-right: 1em;
+    }
+  }
+  .button-wrapper {
+    margin-top: 1em;
+  }
+  @include breakpoint-down(desktop) {
+    .form__input-wrapper {
+      width: 80%;
+    }
+  }
+  @include breakpoint-down(tablet) {
+    width: 60%;
+    padding: 2em 1.5em;
+  }
+  @include breakpoint-down(mobile) {
+    width: 100%;
+    .form__input-wrapper {
+      width: 100%;
+    }
+  }
+}
+
+// classed to be handles by javascript
+// name, email, password, checkbox, signup, signin
+.form-con-signUp.name .form {
+  .form__wrapper-email,
+  .form__wrapper-password,
+  .form__wrapper-checkbox {
+    display: none;
+  }
+  .btn-prev,
+  .btn-signin,
+  .btn-signup {
+    display: none;
+  }
+}
+.form-con-signUp.password .form {
+  .form__wrapper-email,
+  .form__wrapper-name,
+  .form__wrapper-checkbox {
+    display: none;
+  }
+  .btn-signin,
+  .btn-signup {
+    display: none;
+  }
+}
+.form-con-signUp.checkbox .form {
+  .form__wrapper-email,
+  .form__wrapper-password,
+  .form__wrapper-name {
+    display: none;
+  }
+  .btn-next,
+  .btn-signup {
+    display: none;
+  }
+}
+.form-con-signUp.email .form {
+  .form__wrapper-name,
+  .form__wrapper-password,
+  .form__wrapper-checkbox {
+    display: none;
+  }
+  .btn-signin,
+  .btn-signup {
+    display: none;
+  }
+}
+.form-con-signUp.signup{
+    .form-con__p.signin {
+        display: none;
+    }
+    .form-con__heading.signin {
+        display: none;
+    }
+}
+.form-con-signUp.signin {
+  .form {
+    .form__wrapper-name,
+    .form__wrapper-checkbox,
+    .form__wrapper-confirm-password {
+      display: none;
+    }
+    .btn-prev,
+    .btn-signup,
+    .btn-next {
+      display: none;
+    }
+  }
+  .form-con__progress {
+    display: none;
+  }
+  .form-con__p.signup {
+      display: none;
+  }
+  .form-con__heading.signup {
+      display: none;
+  }
+}

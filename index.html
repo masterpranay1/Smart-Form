@@ -7,21 +7,120 @@
     <title>Form.</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
-  <body>
-      <!-- Hero Section  -->
-      <!-- Hidden in mobile devices -->
-      <section class="hero signUp flex flex-col">
-        <h1 class="hero__heading">Form<span class="highlight">.</span></h1>
-        <p class="hero__text-l">MULTISTEP VANILLA JS FORM ALONG WITH <span class="highlight">VALIDATOR</span></p>
-        <img class="hero__image hero__img-signUp" src="./assets/images/sign-up-img.svg" alt="sign up image">
-        <img class="hero__image hero__img-signIn" src="./assets/images/sign-in-image.svg" alt="sign up image">
-        <img class="hero__image hero__img-feature" src="./assets/images/features-page-image.svg" alt="sign up image">
-        <p class="hero__text-m">Made with love by <span class="highlight">MASTERPRANAY</span></p>
-      </section>
+  <body class="flex flex-row">
+    <!-- Hero Section  -->
+    <!-- Hidden in mobile devices -->
+    <section class="hero signUp flex flex-col">
+      <h1 class="hero__heading">Form<span class="highlight">.</span></h1>
+      <p class="hero__text-l">
+        MULTISTEP VANILLA JS FORM ALONG WITH
+        <span class="highlight">VALIDATOR</span>
+      </p>
+      <img
+        class="hero__image hero__img-signUp"
+        src="./assets/images/sign-up-img.svg"
+        alt="sign up image"
+      />
+      <img
+        class="hero__image hero__img-signIn"
+        src="./assets/images/sign-in-image.svg"
+        alt="sign up image"
+      />
+      <img
+        class="hero__image hero__img-feature"
+        src="./assets/images/features-page-image.svg"
+        alt="sign up image"
+      />
+      <p class="hero__text-m">
+        Made with love by <span class="highlight">MASTERPRANAY</span>
+      </p>
+    </section>
 
-      <section class="form-con">
-        
-      </section>
+    <section class="form-con form-con-signUp flex flex-col signin">
+      <h2 class="form-con__heading signup">Get Started</h2>
+      <h2 class="form-con__heading signin">Welcome Back</h2>
+      <p class="form-con__p signup">
+        Already have an account.
+        <a class="highlight a-signin" href="#" id="a-signin">Sign In</a>
+      </p>
+      <p class="form-con__p signin">
+        Don't have an account.
+        <a class="highlight a-signin" href="#" id="a-signin">Sign Up</a>
+      </p>
+      <div class="form-con__progress circleBox">
+        <!-- to-do -> add svg and use gsab to animate them -->
+      </div>
+      <form class="form" id="form">
+        <!-- to do -> add validation  -->
+        <div class="form__input-wrapper form__wrapper-name flex flex-col">
+          <label for="name">Full Name</label>
+          <input
+            type="text"
+            name="name"
+            class="form__input"
+            id="name"
+            placeholder="Enter Your Name"
+            autocomplete="off"
+          />
+        </div>
+        <div class="form__input-wrapper form__wrapper-email flex flex-col">
+          <label for="email">Email address</label>
+          <input
+            type="text"
+            name="email"
+            class="form__input"
+            id="email"
+            placeholder="Enter Email"
+            autocomplete="off"
+          />
+        </div>
+        <div class="form__input-wrapper form__wrapper-password flex flex-col">
+          <label for="password">Enter Password</label>
+          <input
+            type="text"
+            name="password"
+            class="form__input"
+            id="password"
+            placeholder="Enter Password"
+            autocomplete="off"
+          />
+        </div>
+        <div class="form__input-wrapper form__wrapper-confirm-password form__wrapper-password flex flex-col">
+          <label for="matchPassword">Confirm Password</label>
+          <input
+            type="text"
+            name="password"
+            class="form__input"
+            id="confirm-password"
+            placeholder="Confirm Passoword"
+            autocomplete="off"
+          />
+        </div>
+        <div
+          class="form__input-wrapper checkbox form__wrapper-checkbox flex flex-row"
+          id="checkbox"
+        >
+          <input
+            type="checkbox"
+            name="checkbox"
+            class="form__input-checkbox"
+            id="checkbox"
+          />
+          <p>Check the Box to Sign Up</p>
+        </div>
+        <button class="form__button-sec btn-prev" id="btn-prev">Previous</button>
+        <button class="form__button-pri btn-next" id="btn-next">Next</button>
+        <button class="form__button-pri btn-signin" id="btn-signIn">Sign In</button>
+        <button class="form__button-pri btn-signup" id="btn-signUp">Sign Up</button>
+      </form>
+      <hr/ style="margin-top: 4em; width: 80%;">
+      <p class="form-con__p signup" style="margin-top: 1em;">Or Sign Up using :</p>
+      <p class="form-con__p signin" style="margin-top: 1em;">Or Sign In using :</p>
+      <div class="button-wrapper flex">
+        <button style="background: #4285F4; color: #fff;">Google</button>
+        <button style="background: #333333; color: #fff;margin-left: 1em;">Github</button>
+      </div>
+    </section>
     <script src="./assets/js/index.js" defer></script>
   </body>
 </html>

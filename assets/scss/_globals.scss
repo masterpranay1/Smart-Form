@@ -77,20 +77,22 @@ body {
 a {
     text-decoration: none;
     cursor: pointer;
-    color: var(--clr-sec);
+    // color: var(--clr-sec);
 }
 button, .button {
     outline: none;
     border: none;
-    background: var(--clr-sec);
-    color: var(--clr-ter);
 
     padding: 0.5em 1em;
     border-radius: 5px;
     cursor: pointer;
+    font-size: var(--fs-s);
+    min-width: 8em;
 }
-button:hover, .button:hover {
-    background: var(--clr-sec-l);
+@include breakpoint-down(tablet) {
+    button, .button {
+        min-width: 6em;
+    }
 }
 
 // hide utility class
