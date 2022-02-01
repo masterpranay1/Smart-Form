@@ -1,0 +1,27 @@
+/* Google Font Link */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto:wght@300;400;500;700;900&display=swap");
+
+:root {
+  // font family
+  --ff-pri: "Noto Sans", sans-serif;
+  --ff-sec: "Roboto", sans-serif;
+  // to-do -> test with round font
+
+  // colors
+  --clr-pri: #f2f4f6;
+  --clr-sec: #fffffe;
+  --clr-ter: #ff5470;
+  --clr-text: #1b2d45;
+  --clr-text-2: #1b2d45;
+  --clr-warn: #d0342c;
+  --clr-success: #4bb543;
+
+  //to-do -> add more themes
+
+  // font-size
+  --fs-xl : 2.2em;
+  --fs-l: 2em;
+  --fs-m: 1.8em;
+  --fs-s : 1.6em;
+  --fs-xl: 1.4em;
+}

@@ -1,0 +1,145 @@
+/*              
+Breakpoints variable in MAP format and their MIXIN so
+i don't have to include these numbers again and again
+*/
+/* Google Font Link */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto:wght@300;400;500;700;900&display=swap");
+:root {
+  --ff-pri: "Noto Sans", sans-serif;
+  --ff-sec: "Roboto", sans-serif;
+  --clr-pri: #f2f4f6;
+  --clr-sec: #fffffe;
+  --clr-ter: #ff5470;
+  --clr-text: #1b2d45;
+  --clr-text-2: #1b2d45;
+  --clr-warn: #d0342c;
+  --clr-success: #4bb543;
+  --fs-xl: 2.2em;
+  --fs-l: 2em;
+  --fs-m: 1.8em;
+  --fs-s: 1.6em;
+  --fs-xl: 1.4em;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* ****************** */
+/* Flex Utility Class */
+/* ****************** */
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-jc-c {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex-jc-sa {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.flex-jc-sb {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flex-ai-c {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flex-col {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex-row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+/* Grid utility class */
+.grid {
+  display: -ms-grid;
+  display: grid;
+}
+
+/* ******************** */
+/* margin utility class */
+/* ******************** */
+.ml {
+  margin-left: var(--ml, 2em);
+}
+
+.mr {
+  margin-right: var(--mr, 2em);
+}
+
+.mt {
+  margin-top: var(--mt, 2em);
+}
+
+.mb {
+  margin-bottom: var(--mb, 2em);
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--clr-sec);
+}
+
+button, .button {
+  outline: none;
+  border: none;
+  background: var(--clr-sec);
+  color: var(--clr-ter);
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover, .button:hover {
+  background: var(--clr-sec-l);
+}
+
+.hide {
+  display: none;
+}
+
+.text-align {
+  --text-a: center;
+  text-align: var(--text-a, center);
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,114 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    // To-do -> add a global font family
+}
+
+/* ****************** */
+/* Flex Utility Class */
+/* ****************** */
+
+.flex {
+    display: flex;
+
+    // justify content classes
+    &-jc-c {
+        justify-content: center;
+    }
+    &-jc-sa {
+        justify-content: space-around;
+    }
+    &-jc-sb {
+        justify-content: space-between;
+    }
+
+    // align item
+    &-ai-c {
+        align-items: center;
+    }
+    
+    // flex direction
+    &-col {
+        flex-direction: column;
+    }
+    &-row {
+        flex-direction: row;
+    }
+}
+
+/* Grid utility class */
+
+.grid {
+    display: grid;
+    
+    // utility classes for other grid elements are hard to implement
+}
+
+/* ******************** */
+/* margin utility class */
+/* ******************** */
+
+.ml {
+    // either variable ml ( if passed ) or a default value
+    margin-left: var(--ml, 2em);
+}
+.mr {
+    margin-right: var(--mr, 2em);
+}
+.mt {
+    margin-top: var(--mt, 2em);
+}
+.mb {
+    margin-bottom: var(--mb, 2em);
+}
+
+
+// button and link global styles
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--clr-sec);
+}
+button, .button {
+    outline: none;
+    border: none;
+    background: var(--clr-sec);
+    color: var(--clr-ter);
+
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover, .button:hover {
+    background: var(--clr-sec-l);
+}
+
+// hide utility class
+.hide {
+    display: none;
+}
+
+// centre
+.text-align {
+    --text-a : center;
+    text-align: var(--text-a, center);
+}
+
+// utility class to make capitalize
+.capitalize {
+    text-transform: capitalize;
+}
+
+// utility class to make uppercase 
+.uppercase {
+    text-transform: uppercase;
+}
