@@ -7,7 +7,7 @@
     <title>Form.</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
-  <body class="flex flex-row">
+  <body class="flex flex-row signup">
     <!-- Hero Section  -->
     <!-- Hidden in mobile devices -->
     <section class="hero signUp flex flex-col">
@@ -35,8 +35,9 @@
         Made with love by <span class="highlight">MASTERPRANAY</span>
       </p>
     </section>
-
-    <section class="form-con form-con-signUp flex flex-col signin">
+    <section
+      class="form-con form-con-signUp flex flex-col signup password desktop"
+    >
       <h2 class="form-con__heading signup">Get Started</h2>
       <h2 class="form-con__heading signin">Welcome Back</h2>
       <p class="form-con__p signup">
@@ -49,6 +50,9 @@
       </p>
       <div class="form-con__progress circleBox">
         <!-- to-do -> add svg and use gsab to animate them -->
+        <svg height="100" width="100">
+          
+        </svg>
       </div>
       <form class="form" id="form">
         <!-- to do -> add validation  -->
@@ -85,7 +89,9 @@
             autocomplete="off"
           />
         </div>
-        <div class="form__input-wrapper form__wrapper-confirm-password form__wrapper-password flex flex-col">
+        <div
+          class="form__input-wrapper form__wrapper-confirm-password form__wrapper-password flex flex-col"
+        >
           <label for="matchPassword">Confirm Password</label>
           <input
             type="text"
@@ -108,17 +114,59 @@
           />
           <p>Check the Box to Sign Up</p>
         </div>
-        <button class="form__button-sec btn-prev" id="btn-prev">Previous</button>
+        <button class="form__button-sec btn-prev" id="btn-prev">
+          Previous
+        </button>
         <button class="form__button-pri btn-next" id="btn-next">Next</button>
-        <button class="form__button-pri btn-signin" id="btn-signIn">Sign In</button>
-        <button class="form__button-pri btn-signup" id="btn-signUp">Sign Up</button>
+        <button class="form__button-pri btn-signin" id="btn-signIn">
+          Sign In
+        </button>
+        <button class="form__button-pri btn-signup" id="btn-signUp">
+          Sign Up
+        </button>
       </form>
       <hr/ style="margin-top: 4em; width: 80%;">
-      <p class="form-con__p signup" style="margin-top: 1em;">Or Sign Up using :</p>
-      <p class="form-con__p signin" style="margin-top: 1em;">Or Sign In using :</p>
+      <p class="form-con__p signup" style="margin-top: 1em">
+        Or Sign Up using :
+      </p>
+      <p class="form-con__p signin" style="margin-top: 1em">
+        Or Sign In using :
+      </p>
       <div class="button-wrapper flex">
-        <button style="background: #4285F4; color: #fff;">Google</button>
-        <button style="background: #333333; color: #fff;margin-left: 1em;">Github</button>
+        <button style="background: #4285f4; color: #fff">Google</button>
+        <button style="background: #333333; color: #fff; margin-left: 1em">
+          Github
+        </button>
+      </div>
+      <p class="form__text-l">
+        MULTISTEP VANILLA JS FORM ALONG WITH
+        <span class="highlight">VALIDATOR</span>
+      </p>
+      <p class="form__text-m">
+        Made with love by <span class="highlight">MASTERPRANAY</span>
+      </p>
+      <div class="shape"></div>
+    </section>
+    <header class="flex flex-row">
+      <h1>FORM <span class="highlight">.</span></h1>
+    </header>
+    <section class="welcomeAndFeature">
+      <img src="./assets/images/Welcome.png" alt="welcome image">
+      <h1>Hello <span class="highlight">Pranay</span></h1>
+      <p>Welcome to this Form page.</p>
+      <p class="intro">
+        This is a dummy sign in / sign up page created using
+        <span class="highlight">VANILLA JS</span> and
+        <span class="highlight">SASS</span>
+      </p>
+      <div class="featuresBox">
+        <h2>Few Features</h2>
+        <div class="feature-wrapper">
+          <p class="featureBox">Password Validation</p>
+          <p class="featureBox">Email Check</p>
+          <p class="featureBox">Vacant Field Check</p>
+          <p />
+        </div>
       </div>
     </section>
     <script src="./assets/js/index.js" defer></script>

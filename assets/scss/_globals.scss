@@ -10,7 +10,19 @@ body {
     width: 100%;
     min-height: 100vh;
     font-family: var(--ff-pri);
+    overflow-x: hidden;
 }
+body.signup { 
+    .welcomeAndFeature {
+        display: none;
+    }
+}
+body.feature {
+    .form-con {
+        display: none;
+    }
+}
+
 
 /* ****************** */
 /* Flex Utility Class */

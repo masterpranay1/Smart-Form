@@ -1,0 +1,91 @@
+.welcomeAndFeature {
+  width: 50%;
+  min-height: 100vh;
+  padding: 3em;
+  color: var(--clr-text);
+  h1 {
+    font-size: var(--fs-l);
+    font-weight: 700;
+    font-family: var(--ff-sec);
+    color: var(--clr-text-2);
+  }
+  h1 + p {
+    font-size: var(--fs-m);
+    font-family: var(--ff-sec);
+    line-height: 2;
+  }
+  p.intro {
+    --mt: 3em;
+    margin-top: var(--mt);
+    font-size: var(--fs-m);
+    font-weight: 500;
+    max-width: 30ch;
+  }
+  .featuresBox {
+    width: 100%;
+    background: var(--clr-pri);
+    padding: 2em;
+    margin: 2em 0;
+    border-radius: 5px;
+    h2 {
+      font-size: var(--fs-m);
+    }
+    .feature-wrapper {
+      width: 100%;
+      display: flex;
+      flex-flow: row wrap;
+      margin: 2em 0;
+      gap: 1em;
+      .featureBox {
+        padding: 0.5em 1em;
+        background: var(--clr-sec);
+        border-radius: 3px;
+      }
+    }
+  }
+  position: relative;
+  img {
+    position: absolute;
+    right: -1em;
+    top: -3em;
+    width: 20em;
+    z-index: -1;
+  }
+  @include breakpoint-down(desktop) {
+    img {
+      width: 15em;
+      top: -1em;
+      right: -2em;
+    }
+  }
+  @include breakpoint-down(tablet) {
+    width: 60%;
+    img {
+      width: 12em;
+      top: -1em;
+      right: -1em;
+    }
+    .featuresBox .feature-wrapper .featureBox {
+      padding: 0.5em 1em;
+    }
+  }
+  @include breakpoint-down(mobile) {
+    width: 100%;
+    padding: 2em;
+    img {
+      width: 12em;
+      top: -1em;
+      right: -1em;
+    }
+    p.intro {
+      --mt: 4em;
+    }
+    .featuresBox .feature-wrapper .featureBox {
+      padding: 0.5em 1em;
+    }
+    .featuresBox {
+      padding: 1.5em;
+      font-size: var(--fs-xs);
+    }
+  }
+}
