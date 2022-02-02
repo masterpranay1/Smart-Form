@@ -281,8 +281,8 @@ button, .button {
 
 .form-con__progress {
   width: 10em;
-  height: 5em;
-  background: var(--clr-pri);
+  height: 3em;
+  background: var(--clr-sec);
   --mt: 2em;
   margin-top: var(--mt);
 }
@@ -611,5 +611,40 @@ header.desktop {
     padding: 1.5em;
     font-size: var(--fs-xs);
   }
+}
+
+.circleBox {
+  width: 15em;
+  height: 3em;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.circleBox .circle {
+  width: 2em;
+  height: 2em;
+  background: var(--clr-pri);
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.circleBox .line {
+  position: absolute;
+  width: 100%;
+  height: .2em;
+  background: -webkit-gradient(linear, left top, right top, color-stop(33%, var(--clr-text)), color-stop(33%, var(--clr-pri)));
+  background: linear-gradient(to right, var(--clr-text) 33%, var(--clr-pri) 33%);
+  z-index: 1;
 }
 /*# sourceMappingURL=style.css.map */
