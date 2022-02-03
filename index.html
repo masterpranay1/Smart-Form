@@ -35,11 +35,15 @@
         Made with love by <span class="highlight">MASTERPRANAY</span>
       </p>
     </section>
-    <section
-      class="form-con form-con-signUp flex flex-col signup name desktop"
-    >
+
+    <!-- form container -->
+    <section class="form-con form-con-signUp flex flex-col signup name desktop">
+
+      <!-- heading for signup/signin -->
       <h2 class="form-con__heading signup">Get Started</h2>
       <h2 class="form-con__heading signin">Welcome Back</h2>
+
+      <!-- subheading for signin/signup -->
       <p class="form-con__p signup">
         Already have an account.
         <a class="highlight a-signin" href="#" id="a-signin">Sign In</a>
@@ -48,6 +52,8 @@
         Don't have an account.
         <a class="highlight a-signin" href="#" id="a-signin">Sign Up</a>
       </p>
+
+      <!-- Progress indicator -->
       <div class="form-con__progress circleBox">
         <span class="line"></span>
         <div class="circle circle1">1</div>
@@ -55,8 +61,12 @@
         <div class="circle circle3">3</div>
         <div class="circle circle4">4</div>
       </div>
+
+      <!-- Form starting from here -->
+
       <form class="form" id="form">
-        <!-- to do -> add validation  -->
+
+        <!-- name inout wrapper -->
         <div class="form__input-wrapper form__wrapper-name flex flex-col">
           <label for="name">Full Name</label>
           <input
@@ -67,7 +77,10 @@
             placeholder="Enter Your Name"
             autocomplete="off"
           />
+          <p class="error" id="error" style="margin-top: 1em;">*Name is required</p>
         </div>
+
+        <!-- email wrapper -->
         <div class="form__input-wrapper form__wrapper-email flex flex-col">
           <label for="email">Email address</label>
           <input
@@ -78,7 +91,10 @@
             placeholder="Enter Email"
             autocomplete="off"
           />
+          <p class="error" id="error" style="margin-top: 1em;">*Name is required</p>
         </div>
+
+        <!-- password wrapper -->
         <div class="form__input-wrapper form__wrapper-password flex flex-col">
           <label for="password">Enter Password</label>
           <input
@@ -89,7 +105,10 @@
             placeholder="Enter Password"
             autocomplete="off"
           />
+          <p class="error" id="error" style="margin-top: 1em;">*Name is required</p>
         </div>
+
+        <!-- confirm password wrapper -->
         <div
           class="form__input-wrapper form__wrapper-confirm-password form__wrapper-password flex flex-col"
         >
@@ -102,7 +121,10 @@
             placeholder="Confirm Passoword"
             autocomplete="off"
           />
+          <p class="error" id="error" style="margin-top: 1em;">*Name is required</p>
         </div>
+
+        <!-- checkbox wrapper -->
         <div
           class="form__input-wrapper checkbox form__wrapper-checkbox flex flex-row"
           id="checkbox"
@@ -114,6 +136,7 @@
             id="checkbox"
           />
           <p>Check the Box to Sign Up</p>
+          <p class="error" id="error" style="margin-top: 1em;">*Name is required</p>
         </div>
         <button class="form__button-sec btn-prev" id="btn-prev">
           Previous
@@ -126,19 +149,26 @@
           Sign Up
         </button>
       </form>
+
       <hr/ style="margin-top: 4em; width: 80%;">
+
+      <!-- alternative option for signin/signup  -->
       <p class="form-con__p signup" style="margin-top: 1em">
         Or Sign Up using :
       </p>
       <p class="form-con__p signin" style="margin-top: 1em">
         Or Sign In using :
       </p>
+
+      <!-- buttons for google and github -->
       <div class="button-wrapper flex">
         <button style="background: #4285f4; color: #fff">Google</button>
         <button style="background: #333333; color: #fff; margin-left: 1em">
           Github
         </button>
       </div>
+
+      <!-- footer for mobile devices -->
       <p class="form__text-l">
         MULTISTEP VANILLA JS FORM ALONG WITH
         <span class="highlight">VALIDATOR</span>
@@ -152,7 +182,7 @@
       <h1>FORM <span class="highlight">.</span></h1>
     </header>
     <section class="welcomeAndFeature">
-      <img src="./assets/images/Welcome.png" alt="welcome image">
+      <img src="./assets/images/Welcome.png" alt="welcome image" />
       <h1>Hello <span class="highlight">Pranay</span></h1>
       <p>Welcome to this Form page.</p>
       <p class="intro">

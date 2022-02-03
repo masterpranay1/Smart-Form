@@ -144,6 +144,10 @@ a {
   cursor: pointer;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 button, .button {
   outline: none;
   border: none;
@@ -317,6 +321,7 @@ button, .button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
 }
 
 .form-con .form__input-wrapper.checkbox input {

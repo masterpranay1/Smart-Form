@@ -91,6 +91,9 @@ a {
     cursor: pointer;
     // color: var(--clr-sec);
 }
+a:hover {
+    text-decoration: underline;
+}
 button, .button {
     outline: none;
     border: none;
