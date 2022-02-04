@@ -10,7 +10,7 @@
   <body class="flex flex-row signup">
     <!-- Hero Section  -->
     <!-- Hidden in mobile devices -->
-    <section class="hero signUp flex flex-col">
+    <section class="hero signUp flex flex-col" id="hero">
       <h1 class="hero__heading">Form<span class="highlight">.</span></h1>
       <p class="hero__text-l">
         MULTISTEP VANILLA JS FORM ALONG WITH
@@ -37,7 +37,7 @@
     </section>
 
     <!-- form container -->
-    <section class="form-con form-con-signUp flex flex-col signup name desktop">
+    <section class="form-con form-con-signUp flex flex-col signup name desktop" id="form-con">
 
       <!-- heading for signup/signin -->
       <h2 class="form-con__heading signup">Get Started</h2>
@@ -67,61 +67,57 @@
       <form class="form" id="form">
 
         <!-- name inout wrapper -->
-        <div class="form__input-wrapper form__wrapper-name flex flex-col">
+        <div class="form__input-wrapper form__wrapper-name flex flex-col" id="name">
           <label for="name">User Name</label>
           <input
             type="text"
             name="name"
             class="form__input"
-            id="name"
             placeholder="Enter Your Username"
             autocomplete="off"
           />
-          <p class="error" id="error" style="margin-top: 1em;">*Name is required</p>
+          <p class="error" style="margin-top: 1em;">*Name is required</p>
         </div>
 
         <!-- email wrapper -->
-        <div class="form__input-wrapper form__wrapper-email flex flex-col">
+        <div class="form__input-wrapper form__wrapper-email flex flex-col" id="email">
           <label for="email">Email address</label>
           <input
             type="text"
             name="email"
             class="form__input"
-            id="email"
             placeholder="Enter Email"
             autocomplete="off"
           />
-          <p class="error" id="error" style="margin-top: 1em;">*Name is required</p>
+          <p class="error" style="margin-top: 1em;">*Name is required</p>
         </div>
 
         <!-- password wrapper -->
-        <div class="form__input-wrapper form__wrapper-password flex flex-col">
+        <div class="form__input-wrapper form__wrapper-password flex flex-col" id="password">
           <label for="password">Enter Password</label>
           <input
             type="text"
             name="password"
             class="form__input"
-            id="password"
             placeholder="Enter Password"
             autocomplete="off"
           />
-          <p class="error" id="error" style="margin-top: 1em;">*Name is required</p>
+          <p class="error" style="margin-top: 1em;">*Name is required</p>
         </div>
 
         <!-- confirm password wrapper -->
         <div
-          class="form__input-wrapper form__wrapper-confirm-password form__wrapper-password flex flex-col"
+          class="form__input-wrapper form__wrapper-confirm-password form__wrapper-password flex flex-col" id="confirm-password"
         >
           <label for="matchPassword">Confirm Password</label>
           <input
             type="text"
             name="password"
             class="form__input"
-            id="confirm-password"
             placeholder="Confirm Passoword"
             autocomplete="off"
           />
-          <p class="error" id="error" style="margin-top: 1em;">*Name is required</p>
+          <p class="error" style="margin-top: 1em;">*Name is required</p>
         </div>
 
         <!-- checkbox wrapper -->
@@ -133,10 +129,9 @@
             type="checkbox"
             name="checkbox"
             class="form__input-checkbox"
-            id="checkbox"
           />
           <p>Check the Box to Sign Up</p>
-          <p class="error" id="error" style="margin-top: 1em;">*Name is required</p>
+          <p class="error" style="margin-top: 1em;">*Name is required</p>
         </div>
         <button class="form__button-sec btn-prev" id="btn-prev">
           Previous
@@ -200,6 +195,6 @@
         </div>
       </div>
     </section>
-    <script src="./assets/js/index.js" defer></script>
+    <script src="./assets/js/index.js" type="module"></script>
   </body>
 </html>

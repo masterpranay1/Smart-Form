@@ -1,6 +1,6 @@
 open with sign up page
-if **sign in** pressed, go to sign in page( and change accordingly )
-if **sign up** pressed, go to sign up page( and change accordingly )
+if **sign in** pressed, go to sign in page( and change accordingly ) -> done
+if **sign up** pressed, go to sign up page( and change accordingly ) -> done
 
     Sign up Page :
     an object storing the name, email, password -> userDetails
