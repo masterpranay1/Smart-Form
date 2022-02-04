@@ -15,8 +15,20 @@
     4. Check the checkbox
         check if checked or not
     5. Pressing the sign up button
+        store the object in locastorage and then upload to it firebase
+        move to feature page and include the username to feature section.
     6. Next And Prev
         How to handle **next** and **prev** -> just update classes
         ( name , email, password, checkbox )
 
+*/
+
+/*
+    Sign In Page :
+    store the enter username and password
+    add length validation but not the existing validation
+    and no validation on password
+
+    ** Sign In Button ** -> on press 
+    call firebase function to signin 
 */
