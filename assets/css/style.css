@@ -448,6 +448,22 @@ button, .button {
   display: none;
 }
 
+.form__input-wrapper.warn input {
+  border-color: var(--clr-warn);
+}
+
+.form__input-wrapper.warn p {
+  color: var(--clr-warn);
+}
+
+.form__input-wrapper.success input {
+  border-color: var(--clr-success);
+}
+
+.form__input-wrapper.success p {
+  color: var(--clr-success);
+}
+
 header {
   width: 100%;
   background: var(--clr-sec);
