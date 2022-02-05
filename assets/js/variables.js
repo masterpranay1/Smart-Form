@@ -27,29 +27,41 @@ export { name, email, password, confirmPassword, checkbox };
 /* selecting the input tag and their message Area in each wrappers */
 /* **************************************** */
 
-const nameInput = name.querySelector('input');
-const emailInput = email.querySelector('input');
-const passwordInput = password.querySelector('input');
-const confirmPasswordInput = confirmPassword.querySelector('input');
-const checkBoxInput = checkbox.querySelector('input');
+const nameInput = name.querySelector("input");
+const emailInput = email.querySelector("input");
+const passwordInput = password.querySelector("input");
+const confirmPasswordInput = confirmPassword.querySelector("input");
+const checkBoxInput = checkbox.querySelector("input");
 
-const nameMessage = name.querySelector('p');
-const emailMessage = email.querySelector('p');
-const passwordMessage = password.querySelector('p');
-const confirmPasswordMessage = confirmPassword.querySelector('p');
-const checkBoxMessage = checkbox.querySelector('p');
+const nameMessage = name.querySelector("p");
+const emailMessage = email.querySelector("p");
+const passwordMessage = password.querySelector("p");
+const confirmPasswordMessage = confirmPassword.querySelector("p");
+const checkBoxMessage = checkbox.querySelector("p");
 
-export { nameInput, emailInput, passwordInput, confirmPasswordInput, checkBoxInput };
-export { nameMessage, emailMessage, passwordMessage, confirmPasswordMessage, checkBoxMessage };
+export {
+  nameInput,
+  emailInput,
+  passwordInput,
+  confirmPasswordInput,
+  checkBoxInput,
+};
+export {
+  nameMessage,
+  emailMessage,
+  passwordMessage,
+  confirmPasswordMessage,
+  checkBoxMessage,
+};
 
 /* ******************************** */
 /* selecting the button in our form */
 /* ******************************** */
 
-const prev = document.querySelector('#btn-prev');
-const next = document.querySelector('#btn-next');
-const signInBtn = document.querySelector('#btn-signIn');
-const signUpBtn = document.querySelector('#btn-signUp');
+const prev = document.querySelector("#btn-prev");
+const next = document.querySelector("#btn-next");
+const signInBtn = document.querySelector("#btn-signIn");
+const signUpBtn = document.querySelector("#btn-signUp");
 
 export { prev, next, signInBtn, signUpBtn };
 
@@ -58,6 +70,7 @@ export const resetFields = () => {
   const wrappers = [name, email, password, confirmPassword];
   wrappers.forEach((wrapper) => {
     wrapper.querySelector("input").value = "";
+    wrapper.querySelector("p").textContent = "";
   });
   checkbox.querySelector("input").checked = false;
 };
@@ -75,11 +88,29 @@ export const changeClass = (element, classesToAdd, classesToRemove) => {
   });
 };
 
+/* *************************** */
+/* function to check the class */
+/* *************************** */
+
+export const hasClass = (element, classes) => {
+  let tmp = 0
+  classes.forEach((className) => {
+    if (element.classList.contains(className)) {
+      tmp = 1;
+    }
+  });
+  return tmp;
+};
+
+/* ********************************************************** */
+/* fucntion to change styling of input and their message area */
+/* ********************************************************** */
+
 export const warn = (elem, message) => {
-  elem.querySelector('p').textContent = message;
-  changeClass(elem, ['warn'], ['success']);
-}
+  elem.querySelector("p").textContent = message;
+  changeClass(elem, ["warn"], ["success"]);
+};
 export const success = (elem) => {
-  elem.querySelector('p').textContent = '';
-  changeClass(elem, ['success'], ['warn']);
-}
+  elem.querySelector("p").textContent = "";
+  changeClass(elem, ["success"], ["warn"]);
+};
