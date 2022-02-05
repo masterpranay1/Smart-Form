@@ -38,7 +38,7 @@ header {
     height: 20em;
     background: white;
     z-index: 1;
-    clip-path: polygon(0 79%, 100% 44%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 71%, 100% 35%, 100% 99%, 0% 100%);
 }
 
 @include breakpoint-up(mobile) {
