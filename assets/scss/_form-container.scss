@@ -12,14 +12,6 @@
     margin-top: var(--mt);
     font-size: var(--fs-s);
   }
-  &__progress {
-    width: 10em;
-    height: 3em;
-    background: var(--clr-sec);
-
-    --mt: 2em;
-    margin-top: var(--mt);
-  }
   .form {
     --mt: 2em;
     width: 100%;

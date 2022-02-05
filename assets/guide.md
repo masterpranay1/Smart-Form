@@ -5,9 +5,9 @@ if **sign up** pressed, go to sign up page( and change accordingly ) -> done
     Sign up Page :
     an object storing the name, email, password -> userDetails
     1. Enter Name
-        check the length of name 
+        check the length of name and check if already exists
     2. Enter Email
-        check for validation && check if exist already
+        check for validation && check if exist already 
     3. Enter Password and confirm Password
         check the password size and validation
         match passwords

@@ -10,9 +10,7 @@ header {
         font-size: var(--fs-l);
     }
 }
-header.desktop {
-    display: none;
-}
+
 
 .form-con .form__text-l {
     font-size: var(--fs-m);
@@ -42,11 +40,20 @@ header.desktop {
     z-index: 1;
     clip-path: polygon(0 79%, 100% 44%, 100% 100%, 0% 100%);
 }
-.form-con.desktop {
-    .form__text-l, .form__text-m, .shape {
-        display: none;
+
+@include breakpoint-up(mobile) {
+    .form-con {
+        .form__text-l, .form__text-m, .shape {
+            display: none;
+        }
+        + header{
+            display: none;
+        }
     }
-    + header{
-        display: none;
+    .form-con__progress {
+        background: var(--clr-sec);
+    }
+    .circleBox .circle {
+        background: var(--clr-pri);
     }
 }

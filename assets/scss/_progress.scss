@@ -1,25 +1,37 @@
+.form-con__progress {
+  width: 10em;
+  height: 3em;
+  background: var(--clr-pri);
+
+  --mt: 2em;
+  margin-top: var(--mt);
+}
 .circleBox {
-    width: 15em;
-    height: 3em;
-    position: relative;
-    // background: green;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    .circle {
-        width: 2em;
-        height: 2em;
-        background: var(--clr-pri);
-        display: grid;
-        place-items: center;
-        border-radius: 50%;
-        z-index: 2;
-    }
-    .line {
-        position: absolute;
-        width: 100%;
-        height: .2em;
-        background: linear-gradient(to right, var(--clr-ter) 33%, var(--clr-text) 33%);
-        z-index: 1;
-    }
+  width: 15em;
+  height: 3em;
+  position: relative;
+  // background: green;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .circle {
+    width: 2em;
+    height: 2em;
+    background: var(--clr-sec);
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    z-index: 2;
+  }
+  .line {
+    position: absolute;
+    width: 100%;
+    height: 0.2em;
+    background: linear-gradient(
+      to right,
+      var(--clr-ter) 33%,
+      var(--clr-text) 33%
+    );
+    z-index: 1;
+  }
 }
