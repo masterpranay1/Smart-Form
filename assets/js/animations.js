@@ -10,7 +10,7 @@ export const animateCircle = (phase) => {
   for (let i = phase + 2; i <= 4; i++) {
     gsap.to(`#circle${i}`, {
       duration: 0,
-      background: "var(--clr-pri)",
+      background: `${innerWidth < 500 ? "var(--clr-sec)":"var(--clr-pri)"}`,
       color: "var(--clr-text)",
     });
   }

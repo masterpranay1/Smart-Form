@@ -52,6 +52,7 @@ const routeSignIn = () => {
   })
   resetFields();
   animateLine(0);
+  animateCircle(0);
   currentState = null;
   notListening = [1, 1, 1, 1, 1];
   nameInput.removeEventListener('keyup', handleUserValidation);
