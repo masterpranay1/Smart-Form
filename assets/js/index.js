@@ -32,10 +32,12 @@ import {
   isValidPassword,
   isPasswordMatching,
 } from "./validations.js";
+import { animateCircle, animateLine } from "./animations.js";
 
 const signUpStates = ["name", "email", "password", "checkbox"];
 let currentState = 0;
 let notListening = [1, 1, 1, 1, 1];
+animateCircle(0);
 
 /* ********************************** */
 /* routing to sign in or sign up page */
@@ -49,6 +51,7 @@ const routeSignIn = () => {
     changeClass(e, [], ["warn", "success"]);
   })
   resetFields();
+  animateLine(0);
   currentState = null;
   notListening = [1, 1, 1, 1, 1];
   nameInput.removeEventListener('keyup', handleUserValidation);
@@ -148,12 +151,16 @@ const handleNext = () => {
       break;
     default:
   }
+  animateLine(currentState);
+  animateCircle(currentState);
   handleLiveChange();
   changeClass(formCon, [signUpStates[currentState]], signUpStates);
 };
 next.addEventListener("click", handleNext);
 prev.addEventListener("click", () => {
   currentState--;
+  animateLine(currentState);
+  animateCircle(currentState);
   changeClass(formCon, [signUpStates[currentState]], signUpStates);
 })
 
