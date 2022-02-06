@@ -459,7 +459,7 @@ button, .button {
 .welcomeAndFeature {
   width: 50%;
   min-height: 100vh;
-  padding: 3em;
+  padding: 4em 3em;
   color: var(--clr-text);
   position: relative;
 }
@@ -474,13 +474,15 @@ button, .button {
 .welcomeAndFeature h1 + p {
   font-size: var(--fs-m);
   font-family: var(--ff-sec);
-  line-height: 2;
+  line-height: 1;
+  max-width: 60%;
+  margin-top: 0.5em;
 }
 
 .welcomeAndFeature p.intro {
   --mt: 3em;
   margin-top: var(--mt);
-  font-size: var(--fs-m);
+  font-size: var(--fs-s);
   font-weight: 500;
   max-width: 30ch;
 }
@@ -518,15 +520,15 @@ button, .button {
 
 .welcomeAndFeature img {
   position: absolute;
-  right: -1em;
-  top: -3em;
-  width: 20em;
+  right: 3em;
+  top: -1em;
+  width: 15em;
   z-index: -1;
 }
 
 @media (max-width: 63.9375em) {
   .welcomeAndFeature img {
-    width: 15em;
+    width: 13em;
     top: -1em;
     right: -2em;
   }
@@ -539,7 +541,7 @@ button, .button {
   .welcomeAndFeature img {
     width: 12em;
     top: -1em;
-    right: -1em;
+    right: -2em;
   }
   .welcomeAndFeature .featuresBox .feature-wrapper .featureBox {
     padding: 0.5em 1em;
@@ -549,11 +551,11 @@ button, .button {
 @media (max-width: 31.25em) {
   .welcomeAndFeature {
     width: 100%;
-    padding: 2em;
+    padding: 6em 2em;
   }
   .welcomeAndFeature img {
     width: 12em;
-    top: -1em;
+    top: 2em;
     right: -1em;
   }
   .welcomeAndFeature p.intro {
@@ -639,7 +641,7 @@ header h1 {
   font-size: var(--fs-s);
   font-family: var(--ff-sec);
   font-weight: 400;
-  --mt: 4em;
+  --mt: 5em;
   margin-top: var(--mt);
   text-align: right;
   z-index: 2;
