@@ -641,7 +641,7 @@ header h1 {
   font-size: var(--fs-s);
   font-family: var(--ff-sec);
   font-weight: 400;
-  --mt: 5em;
+  --mt: 8em;
   margin-top: var(--mt);
   text-align: right;
   z-index: 2;
