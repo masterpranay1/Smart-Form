@@ -361,6 +361,9 @@ button, .button {
   .form-con .form__input-wrapper {
     width: 100%;
   }
+  .form-con .button-wrapper {
+    margin-bottom: 4em;
+  }
 }
 
 .form-con-signUp.name .form .form__wrapper-email,
@@ -641,7 +644,7 @@ header h1 {
   font-size: var(--fs-s);
   font-family: var(--ff-sec);
   font-weight: 400;
-  --mt: 8em;
+  --mt: 4em;
   margin-top: var(--mt);
   text-align: right;
   z-index: 2;
