@@ -393,7 +393,7 @@ button, .button {
 }
 
 .form-con-signUp.checkbox .form .btn-next,
-.form-con-signUp.checkbox .form .btn-signup {
+.form-con-signUp.checkbox .form .btn-signin {
   display: none;
 }
 

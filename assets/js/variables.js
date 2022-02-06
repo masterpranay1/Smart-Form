@@ -114,3 +114,16 @@ export const success = (elem) => {
   elem.querySelector("p").textContent = "";
   changeClass(elem, ["success"], ["warn"]);
 };
+
+/* feature section user */
+export const user = document.querySelector('#user');
+
+/* save user */
+export const saveUser = () => {
+  let User = {
+    name : nameInput.value,
+    email : emailInput.value,
+    password : passwordInput.value
+  }
+  localStorage.setItem('User', JSON.stringify(User));
+}

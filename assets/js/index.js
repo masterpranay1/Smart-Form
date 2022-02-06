@@ -1,4 +1,5 @@
 import {
+  body,
   signInRoute,
   signUpRoute,
   formCon,
@@ -22,6 +23,8 @@ import {
   confirmPasswordInput,
   success,
   hasClass,
+  saveUser,
+  user,
 } from "./variables.js";
 import {
   isValidUserName,
@@ -159,3 +162,13 @@ document.querySelectorAll("button").forEach((el) => {
     e.preventDefault();
   });
 });
+
+const handleSignUpButtonPress = () => {
+  if(checkBoxInput.checked) {
+    saveUser();
+    user.textContent = JSON.parse(localStorage.getItem('User')).name;
+    changeClass(body, ['feature'],['signup']);
+    changeClass(hero, ['feature'], ['signIn', 'signUp']);
+  }
+}
+signUpBtn.addEventListener('click', handleSignUpButtonPress);
