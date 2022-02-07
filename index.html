@@ -37,8 +37,10 @@
     </section>
 
     <!-- form container -->
-    <section class="form-con form-con-signUp flex flex-col signup name" id="form-con">
-
+    <section
+      class="form-con form-con-signUp flex flex-col signup name"
+      id="form-con"
+    >
       <!-- heading for signup/signin -->
       <h2 class="form-con__heading signup">Get Started</h2>
       <h2 class="form-con__heading signin">Welcome Back</h2>
@@ -65,9 +67,11 @@
       <!-- Form starting from here -->
 
       <form class="form" id="form">
-
         <!-- name inout wrapper -->
-        <div class="form__input-wrapper form__wrapper-name flex flex-col" id="name">
+        <div
+          class="form__input-wrapper form__wrapper-name flex flex-col"
+          id="name"
+        >
           <label for="name">User Name</label>
           <input
             type="text"
@@ -76,11 +80,14 @@
             placeholder="Enter Your Username"
             autocomplete="off"
           />
-          <p class="error" style="margin-top: 1em;"></p>
+          <p class="error" style="margin-top: 1em"></p>
         </div>
 
         <!-- email wrapper -->
-        <div class="form__input-wrapper form__wrapper-email flex flex-col" id="email">
+        <div
+          class="form__input-wrapper form__wrapper-email flex flex-col"
+          id="email"
+        >
           <label for="email">Email address</label>
           <input
             type="text"
@@ -89,35 +96,39 @@
             placeholder="Enter Email"
             autocomplete="off"
           />
-          <p class="error" style="margin-top: 1em;"></p>
+          <p class="error" style="margin-top: 1em"></p>
         </div>
 
         <!-- password wrapper -->
-        <div class="form__input-wrapper form__wrapper-password flex flex-col" id="password">
+        <div
+          class="form__input-wrapper form__wrapper-password flex flex-col"
+          id="password"
+        >
           <label for="password">Enter Password</label>
           <input
-            type="text"
+            type="password"
             name="password"
             class="form__input"
             placeholder="Enter Password"
             autocomplete="off"
           />
-          <p class="error" style="margin-top: 1em;"></p>
+          <p class="error" style="margin-top: 1em"></p>
         </div>
 
         <!-- confirm password wrapper -->
         <div
-          class="form__input-wrapper form__wrapper-confirm-password form__wrapper-password flex flex-col" id="confirm-password"
+          class="form__input-wrapper form__wrapper-confirm-password form__wrapper-password flex flex-col"
+          id="confirm-password"
         >
           <label for="matchPassword">Confirm Password</label>
           <input
-            type="text"
+            type="password"
             name="password"
             class="form__input"
             placeholder="Confirm Passoword"
             autocomplete="off"
           />
-          <p class="error" style="margin-top: 1em;"></p>
+          <p class="error" style="margin-top: 1em"></p>
         </div>
 
         <!-- checkbox wrapper -->
@@ -125,19 +136,15 @@
           class="form__input-wrapper checkbox form__wrapper-checkbox flex flex-row"
           id="checkbox"
         >
-          <input
-            type="checkbox"
-            name="checkbox"
-            class="form__input-checkbox"
-          />
+          <input type="checkbox" name="checkbox" class="form__input-checkbox" />
           <p>Check the Box to Sign Up</p>
-          <p class="error" style="margin-top: 1em;"></p>
+          <p class="error" style="margin-top: 1em"></p>
         </div>
         <button class="form__button-sec btn-prev" id="btn-prev">
           Previous
         </button>
         <button class="form__button-pri btn-next" id="btn-next">Next</button>
-        <button class="form__button-pri btn-signin" id="btn-signIn">
+        <button class="form__button-pri btn-signin" id="btn-signIn" target="/">
           Sign In
         </button>
         <button class="form__button-pri btn-signup" id="btn-signUp">
@@ -157,10 +164,10 @@
 
       <!-- buttons for google and github -->
       <div class="button-wrapper flex">
-        <button style="background: #4285f4; color: #fff">Google</button>
-        <button style="background: #333333; color: #fff; margin-left: 1em">
+        <button style="background: #4285f4; color: #fff" id="google-signin">Google</button>
+        <!-- <button style="background: #333333; color: #fff; margin-left: 1em" id="github-singin">
           Github
-        </button>
+        </button> -->
       </div>
 
       <!-- footer for mobile devices -->

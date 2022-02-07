@@ -25,6 +25,7 @@ import {
   hasClass,
   saveUser,
   user,
+  googleBtn,
 } from "./variables.js";
 import {
   isValidUserName,
@@ -33,6 +34,13 @@ import {
   isPasswordMatching,
 } from "./validations.js";
 import { animateCircle, animateLine } from "./animations.js";
+import {
+  addUserNameAndId,
+  fetchUser,
+  getData,
+  getUserName,
+  googleSignIn,
+} from "./firebase.js";
 
 const signUpStates = ["name", "email", "password", "checkbox"];
 let currentState = 0;
@@ -47,18 +55,18 @@ const routeSignIn = () => {
   // changeClass add the classes passed inside the first array and remove the classed passed inside the second array
   changeClass(hero, ["signIn"], ["signUp"]);
   changeClass(formCon, ["signin"], [...signUpStates, "signup"]);
-  [name, email, password, confirmPassword].forEach(e => {
+  [name, email, password, confirmPassword].forEach((e) => {
     changeClass(e, [], ["warn", "success"]);
-  })
+  });
   resetFields();
   animateLine(0);
   animateCircle(0);
   currentState = null;
   notListening = [1, 1, 1, 1, 1];
-  nameInput.removeEventListener('keyup', handleUserValidation);
-  emailInput.removeEventListener('keyup', handleEmailValidation);
-  passwordInput.removeEventListener('keyup', handlePasswordValidation);
-  confirmPasswordInput.removeEventListener('keyup', handleMatchPassword);
+  nameInput.removeEventListener("keyup", handleUserValidation);
+  emailInput.removeEventListener("keyup", handleEmailValidation);
+  passwordInput.removeEventListener("keyup", handlePasswordValidation);
+  confirmPasswordInput.removeEventListener("keyup", handleMatchPassword);
 };
 const routeSignUp = () => {
   changeClass(hero, ["signUp"], ["signIn"]);
@@ -74,9 +82,9 @@ signUpRoute.addEventListener("click", routeSignUp);
 /* ******************** */
 
 const handleUserValidation = () => {
-  if(currentState == null) return -1;
+  if (currentState == null) return -1;
   let message = isValidUserName(nameInput.value);
-  if(message == "") {
+  if (message == "") {
     success(name);
     return 1;
   } else {
@@ -85,9 +93,9 @@ const handleUserValidation = () => {
   }
 };
 const handleEmailValidation = () => {
-  if(currentState == null) return -1;
+  if (currentState == null) return -1;
   let message = isValidEmail(emailInput.value);
-  if(message == "") {
+  if (message == "") {
     success(email);
     return 1;
   } else {
@@ -96,12 +104,12 @@ const handleEmailValidation = () => {
   }
 };
 const handleMatchPassword = () => {
-  if(currentState == null) return -1;
+  if (currentState == null) return -1;
   let message = isPasswordMatching(
     passwordInput.value,
     confirmPasswordInput.value
   );
-  if(message == "") {
+  if (message == "") {
     success(confirmPassword);
     return 1;
   } else {
@@ -110,7 +118,7 @@ const handleMatchPassword = () => {
   }
 };
 const handlePasswordValidation = () => {
-  if(currentState == null) return -1;
+  if (currentState == null) return -1;
   let message = isValidPassword(passwordInput.value);
   if (message == "") {
     success(password);
@@ -121,30 +129,30 @@ const handlePasswordValidation = () => {
   }
 };
 const handleLiveChange = () => {
-  if(hasClass(name, ['warn', 'success']) && notListening[0]) {
-    nameInput.addEventListener('keyup', handleUserValidation);
+  if (hasClass(name, ["warn", "success"]) && notListening[0]) {
+    nameInput.addEventListener("keyup", handleUserValidation);
     notListening[0] = 0;
   }
-  if(hasClass(email, ['warn', 'success']) && notListening[1]) {
-    emailInput.addEventListener('keyup', handleEmailValidation);
+  if (hasClass(email, ["warn", "success"]) && notListening[1]) {
+    emailInput.addEventListener("keyup", handleEmailValidation);
     notListening[1] = 0;
   }
-  if(hasClass(password, ['warn', 'success']) && notListening[2]) {
-    passwordInput.addEventListener('keyup', handlePasswordValidation);
+  if (hasClass(password, ["warn", "success"]) && notListening[2]) {
+    passwordInput.addEventListener("keyup", handlePasswordValidation);
     notListening[2] = 0;
   }
-  if(hasClass(confirmPassword, ['warn', 'success']) && notListening[3]) {
-    confirmPasswordInput.addEventListener('keyup', handleMatchPassword);
+  if (hasClass(confirmPassword, ["warn", "success"]) && notListening[3]) {
+    confirmPasswordInput.addEventListener("keyup", handleMatchPassword);
     notListening[3] = 0;
   }
-}
+};
 const handleNext = () => {
   switch (currentState) {
     case 0:
       handleUserValidation() == 1 ? currentState++ : null;
       break;
     case 1:
-      handleEmailValidation()  == 1 ? currentState++ : null;
+      handleEmailValidation() == 1 ? currentState++ : null;
       break;
     case 2:
       handlePasswordValidation();
@@ -163,7 +171,7 @@ prev.addEventListener("click", () => {
   animateLine(currentState);
   animateCircle(currentState);
   changeClass(formCon, [signUpStates[currentState]], signUpStates);
-})
+});
 
 document.querySelectorAll("button").forEach((el) => {
   el.addEventListener("click", (e) => {
@@ -172,11 +180,48 @@ document.querySelectorAll("button").forEach((el) => {
 });
 
 const handleSignUpButtonPress = () => {
-  if(checkBoxInput.checked) {
-    saveUser();
-    user.textContent = JSON.parse(localStorage.getItem('User')).name;
-    changeClass(body, ['feature'],['signup']);
-    changeClass(hero, ['feature'], ['signIn', 'signUp']);
+  if (checkBoxInput.checked) {
+    saveUser()
+      .then((result) => {
+        let { uid } = result.user;
+        addUserNameAndId(uid, nameInput.value);
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
+    user.textContent = JSON.parse(localStorage.getItem("User")).name;
+    changeClass(body, ["feature"], ["signup"]);
+    changeClass(hero, ["feature"], ["signIn", "signUp"]);
   }
-}
-signUpBtn.addEventListener('click', handleSignUpButtonPress);
+};
+const handleSignInButtonPress = () => {
+  const User = {
+    email: emailInput.value,
+    password: passwordInput.value,
+  };
+  alert("Loading takes time. Please Wait!!");
+  fetchUser(User)
+    .then(async (result) => {
+      let querySnapshot = await getUserName();
+      querySnapshot.forEach((doc) => {
+        if (doc.data().id == result.user.uid) {
+          user.textContent = doc.data().name;
+          changeClass(body, ["feature"], ["signup"]);
+          changeClass(hero, ["feature"], ["signIn", "signUp"]);
+        }
+      });
+    })
+    .catch((err) => {
+      alert(err.message);
+    });
+};
+signInBtn.addEventListener("click", handleSignInButtonPress);
+signUpBtn.addEventListener("click", handleSignUpButtonPress);
+googleBtn.addEventListener("click", googleSignIn);
+getData().then((userDetail) => {
+  if (userDetail) {
+    user.textContent = userDetail.displayName;
+    changeClass(body, ["feature"], ["signup"]);
+    changeClass(hero, ["feature"], ["signIn", "signUp"]);
+  }
+});

@@ -1,3 +1,5 @@
+import { createUser } from "./firebase.js";
+
 /* body selector */
 export const body = document.querySelector("body");
 
@@ -62,8 +64,10 @@ const prev = document.querySelector("#btn-prev");
 const next = document.querySelector("#btn-next");
 const signInBtn = document.querySelector("#btn-signIn");
 const signUpBtn = document.querySelector("#btn-signUp");
+const googleBtn = document.querySelector('#google-signin');
+const githubBtn = document.querySelector('#github-signin');
 
-export { prev, next, signInBtn, signUpBtn };
+export { prev, next, signInBtn, signUpBtn, googleBtn, githubBtn };
 
 /* function to reset all the input fields */
 export const resetFields = () => {
@@ -119,11 +123,12 @@ export const success = (elem) => {
 export const user = document.querySelector('#user');
 
 /* save user */
-export const saveUser = () => {
+export const saveUser = async () => {
   let User = {
     name : nameInput.value,
     email : emailInput.value,
     password : passwordInput.value
   }
   localStorage.setItem('User', JSON.stringify(User));
+  return createUser(User);
 }
