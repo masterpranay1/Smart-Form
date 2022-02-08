@@ -109,7 +109,8 @@ const handleMatchPassword = () => {
     passwordInput.value,
     confirmPasswordInput.value
   );
-  if (message == "") {
+  let message2 = isValidPassword(passwordInput.value);
+  if (message == "" && message2 == "") {
     success(confirmPassword);
     return 1;
   } else {
