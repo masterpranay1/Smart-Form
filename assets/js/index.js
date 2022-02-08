@@ -226,3 +226,8 @@ getData().then((userDetail) => {
     changeClass(hero, ["feature"], ["signIn", "signUp"]);
   }
 });
+window.addEventListener('keydown', e => {
+  if(e.key == 'Enter') {
+    e.preventDefault();
+  }
+})
